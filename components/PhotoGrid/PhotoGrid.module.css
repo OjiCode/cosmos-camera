@@ -1,0 +1,27 @@
+.gridContainer {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.endOfListState {
+  padding: 2rem;
+  text-align: center;
+  font-style: italic;
+  color: #555;
+  width: 100%;
+  box-sizing: border-box; 
+}
+
+.photoGrid__sentinel {
+  height: 10px; 
+  width: 100%; 
+}
+

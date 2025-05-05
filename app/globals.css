@@ -1,12 +1,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --shimmer-background: #e0e0e0; 
+  --shimmer-background-pulsed: #f0f0f0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    --shimmer-background: #333333;
+    --shimmer-background-pulsed: #444444;
   }
 }
 

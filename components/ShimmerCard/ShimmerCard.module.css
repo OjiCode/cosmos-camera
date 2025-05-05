@@ -1,0 +1,16 @@
+@keyframes pulse{
+  0%, 100% {
+    background-color: var(--shimmer-background);
+  }
+  50% {
+    background-color: var(--shimmer-background-pulsed);
+  }
+}
+
+.shimmerCard {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+  background-color: var(--shimmer-background);
+  animation: pulse 2s ease-in-out infinite;
+} 
