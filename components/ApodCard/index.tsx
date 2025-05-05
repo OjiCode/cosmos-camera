@@ -28,7 +28,7 @@ export const ApodCard = React.memo(
     return (
       <Link
         href={`/apod/${apod.date}`}
-        className={styles.apodCard}
+        className={`${styles.apodCard} focus-visible-ring`}
         aria-label={altText}
       >
         <div className={styles.imageContainer}>

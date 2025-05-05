@@ -6,6 +6,7 @@ import {
   MILLISECONDS_PER_SECOND,
   SECONDS_PER_MINUTE,
 } from "../constants";
+import { ThemeProvider } from "next-themes";
 
 const GC_TIME_MS =
   CACHE_TIME_MINUTES * SECONDS_PER_MINUTE * MILLISECONDS_PER_SECOND;
@@ -36,6 +37,13 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   const queryClient = getQueryClient();
 
   return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      storageKey="theme"
+    >
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    </ThemeProvider>
   );
 }

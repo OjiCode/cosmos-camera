@@ -1,0 +1,31 @@
+.toggleButton {
+  padding: 0.25rem; 
+  border-radius: 100%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.toggleButton:hover {
+  background-color: var(--button-hover-bg);
+}
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  display: block;
+}
+
+.sunIcon {
+  color: var(--toggle-sun-icon-color);
+}
+
+.moonIcon {
+  color: var(--toggle-moon-icon-color);
+} 
+
+.placeholder {
+  height: 1.5rem;
+  width: 1.5rem;
+} 
