@@ -1,5 +1,8 @@
+import React, { memo } from "react";
 import styles from "./ShimmerCard.module.css";
 
-export const ShimmerCard = () => {
+const ShimmerCardComponent = () => {
   return <div className={styles.shimmerCard} aria-hidden="true"></div>;
 };
+
+export const ShimmerCard = memo(ShimmerCardComponent);

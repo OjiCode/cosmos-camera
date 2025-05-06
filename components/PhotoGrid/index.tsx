@@ -2,16 +2,13 @@
 
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import type { InfiniteData } from "@tanstack/react-query";
 import { useInfiniteApodList } from "../../hooks/useApodQueries";
-import { ApodCard } from "../ApodCard";
 import { ShimmerCard } from "../ShimmerCard";
 import { ApodData } from "../../services/apodService";
 import { DAYS_PER_PAGE } from "../../constants";
 import styles from "./PhotoGrid.module.css";
-import type { InfiniteData } from "@tanstack/react-query";
-
-const FIRST_SET_COUNT = DAYS_PER_PAGE;
-
+import { ApodCard } from "../ApodCard";
 interface PhotoGridProps {
   initialInfiniteData?: InfiniteData<ApodData[], number>;
 }
@@ -64,16 +61,14 @@ export const PhotoGrid = ({ initialInfiniteData }: PhotoGridProps) => {
     <div className={styles.gridContainer}>
       <div className={styles.grid}>
         {data?.pages.map((page: ApodData[], pageIndex: number) =>
-          page.map((apod: ApodData) => {
+          [...page].reverse().map((apod: ApodData) => {
             const currentIndex = imageIndex++;
-            const isPriority = currentIndex < FIRST_SET_COUNT;
             return (
               <ApodCard
                 key={
                   apod.date || `apod-${pageIndex}-${apod.title}-${currentIndex}`
                 }
                 apod={apod}
-                isPriority={isPriority}
               />
             );
           })

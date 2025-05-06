@@ -1,5 +1,5 @@
 .toggleButton {
-  padding: 0.25rem; 
+  padding: var(--spacing-xs); 
   border-radius: 100%;
   border: none;
   background-color: transparent;
@@ -12,8 +12,8 @@
 }
 
 .icon {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: var(--spacing-lg);
+  width: var(--spacing-lg);
   display: block;
 }
 
@@ -26,6 +26,6 @@
 } 
 
 .placeholder {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: var(--spacing-lg);
+  width: var(--spacing-lg);
 } 

@@ -1,12 +1,12 @@
 .header {
   background-color: var(--background);
-  padding: 1rem 1.5rem;
+  padding: var(--spacing-md) var(--spacing-lg);
   border-bottom: 1px solid var(--border-color);
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .container {
-  max-width: 1280px;
+  max-width: var(--container-max-width);
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -15,8 +15,8 @@
 }
 
 .titleLink {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
   color: var(--link-color);
   transition: color 0.3s ease;
 } 

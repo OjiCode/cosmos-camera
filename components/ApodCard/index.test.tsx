@@ -50,14 +50,14 @@ describe("ApodCard", () => {
     const linkElement = screen.getByRole("link");
     expect(linkElement).toHaveAttribute("href", `/apod/${mockImageApod.date}`);
     expect(linkElement).toHaveAccessibleName(
-      `NASA's Astronomy Picture of the Day for ${mockImageApod.date}: ${mockImageApod.title}`
+      `${mockImageApod.title} - APOD ${mockImageApod.date}`
     );
 
     const imgElement = screen.getByRole("img");
     expect(imgElement).toHaveAttribute("src", mockImageApod.url);
     expect(imgElement).toHaveAttribute(
       "alt",
-      `NASA's Astronomy Picture of the Day for ${mockImageApod.date}: ${mockImageApod.title}`
+      `${mockImageApod.title} - APOD ${mockImageApod.date}`
     );
     expect(imgElement).toHaveAttribute("loading", "lazy");
   });
@@ -68,14 +68,14 @@ describe("ApodCard", () => {
     const linkElement = screen.getByRole("link");
     expect(linkElement).toHaveAttribute("href", `/apod/${mockVideoApod.date}`);
     expect(linkElement).toHaveAccessibleName(
-      `NASA's Astronomy Picture of the Day for ${mockVideoApod.date}: ${mockVideoApod.title}`
+      `${mockVideoApod.title} - APOD ${mockVideoApod.date}`
     );
 
     const imgElement = screen.getByRole("img");
     expect(imgElement).toHaveAttribute("src", mockVideoApod.thumbnail_url);
     expect(imgElement).toHaveAttribute(
       "alt",
-      `Video thumbnail for NASA's Astronomy Picture of the Day for ${mockVideoApod.date}: ${mockVideoApod.title}`
+      `${mockVideoApod.title} - APOD ${mockVideoApod.date}`
     );
     expect(imgElement).toHaveAttribute("loading", "lazy");
   });

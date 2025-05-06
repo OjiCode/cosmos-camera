@@ -1,0 +1,25 @@
+.videoWrapper {
+  position: relative; /* To position iframe absolutely */
+  width: 100%;
+  aspect-ratio: var(--aspect-video);
+  background-color: var(--shimmer-background);
+  border-radius: var(--spacing-xs);
+  overflow: hidden;
+  margin-bottom: var(--spacing-md);
+}
+
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; 
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+  will-change: opacity;
+}
+
+.iframeLoaded {
+  opacity: 1;
+}

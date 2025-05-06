@@ -27,7 +27,7 @@ export const getDatesForPage = (
   endDate.setUTCDate(today.getUTCDate() - pageParam * DAYS_PER_PAGE);
 
   const startDate = new Date(endDate);
-  // Subtract (DAYS_PER_PAGE - 1) days to get the start date of the 30-day window
+  // Subtract (DAYS_PER_PAGE - 1) days to get the start date of the window
   startDate.setUTCDate(endDate.getUTCDate() - (DAYS_PER_PAGE - 1));
 
   return {

@@ -1,0 +1,22 @@
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--aspect-video);
+  background-color: var(--shimmer-background);
+  display: block;
+}
+
+.image {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+  will-change: opacity;
+  object-fit: cover;
+}
+
+.image.image__contain {
+  object-fit: contain;
+}
+
+.imageLoaded {
+  opacity: 1;
+} 
