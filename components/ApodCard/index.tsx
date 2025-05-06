@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ApodData } from "../../services/apodService";
 import styles from "./ApodCard.module.css";
 import { ImageWithShimmer } from "../ImageWithShimmer";
+import { PlayCircleIcon, PhotoIcon } from "@heroicons/react/24/solid";
 
 interface ApodCardProps {
   apod: ApodData;
@@ -31,6 +32,13 @@ export const ApodCard = memo(({ apod }: ApodCardProps) => {
         priority={true}
         className={styles.objectCover}
       />
+      <div className={styles.iconContainer}>
+        {media_type === "video" ? (
+          <PlayCircleIcon className={styles.icon} />
+        ) : (
+          <PhotoIcon className={styles.icon} />
+        )}
+      </div>
     </Link>
   );
 });

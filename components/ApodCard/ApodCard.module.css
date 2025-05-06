@@ -13,3 +13,21 @@
 .objectCover {
   object-fit: cover;
 }
+
+.iconContainer {
+  position: absolute;
+  bottom: var(--spacing-sm);
+  right: var(--spacing-sm);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); 
+  border-radius: var(--spacing-xs);
+  padding: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: var(--icon-size-md); 
+  height: var(--icon-size-md);
+}
