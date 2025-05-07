@@ -50,14 +50,14 @@ describe("ApodCard", () => {
     const linkElement = screen.getByRole("link");
     expect(linkElement).toHaveAttribute("href", `/apod/${mockImageApod.date}`);
     expect(linkElement).toHaveAccessibleName(
-      `${mockImageApod.title} - APOD ${mockImageApod.date}`
+      `View details for ${mockImageApod.title} - APOD ${mockImageApod.date}`
     );
 
     const imgElement = screen.getByRole("img");
     expect(imgElement).toHaveAttribute("src", mockImageApod.url);
     expect(imgElement).toHaveAttribute(
       "alt",
-      `${mockImageApod.title} - APOD ${mockImageApod.date}`
+      `View details for ${mockImageApod.title} - APOD ${mockImageApod.date}`
     );
     expect(imgElement).toHaveAttribute("loading", "lazy");
   });
@@ -68,14 +68,14 @@ describe("ApodCard", () => {
     const linkElement = screen.getByRole("link");
     expect(linkElement).toHaveAttribute("href", `/apod/${mockVideoApod.date}`);
     expect(linkElement).toHaveAccessibleName(
-      `${mockVideoApod.title} - APOD ${mockVideoApod.date}`
+      `View details for ${mockVideoApod.title} - APOD ${mockVideoApod.date}`
     );
 
     const imgElement = screen.getByRole("img");
     expect(imgElement).toHaveAttribute("src", mockVideoApod.thumbnail_url);
     expect(imgElement).toHaveAttribute(
       "alt",
-      `${mockVideoApod.title} - APOD ${mockVideoApod.date}`
+      `View details for ${mockVideoApod.title} - APOD ${mockVideoApod.date}`
     );
     expect(imgElement).toHaveAttribute("loading", "lazy");
   });

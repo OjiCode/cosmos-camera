@@ -35,7 +35,6 @@ export function useInfiniteApodList(
       ApodData[]
     > => {
       const { startDate, endDate } = getDatesForPage(pageParam);
-      console.log(`Fetching page ${pageParam}: ${startDate} to ${endDate}`); // TODO: Remove before committing
       return getApodList(startDate, endDate);
     },
     getNextPageParam: (

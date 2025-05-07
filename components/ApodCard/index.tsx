@@ -12,7 +12,7 @@ interface ApodCardProps {
 export const ApodCard = memo(({ apod }: ApodCardProps) => {
   const { date, title, url, media_type, thumbnail_url } = apod;
   const imageUrl = media_type === "video" ? thumbnail_url : url;
-  const imageAlt = `${title} - APOD ${date}`;
+  const imageAlt = `View details for ${title} - APOD ${date}`;
 
   if (!imageUrl) {
     return null;
@@ -32,7 +32,7 @@ export const ApodCard = memo(({ apod }: ApodCardProps) => {
         priority={true}
         className={styles.objectCover}
       />
-      <div className={styles.iconContainer}>
+      <div className={styles.iconContainer} aria-hidden="true">
         {media_type === "video" ? (
           <PlayCircleIcon className={styles.icon} />
         ) : (

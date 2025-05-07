@@ -17,7 +17,6 @@ if (!API_KEY) {
   console.error(
     "VITE_NASA_KEY is not defined. Please add it to your .env file."
   );
-  // TODO: I could potentially show a modal here letting people know what's going wrong and to reach out to me for assistance.
 }
 
 /**

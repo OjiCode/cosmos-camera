@@ -23,7 +23,7 @@ export const VideoPlayer = ({ src, title }: VideoPlayerProps) => {
         src={src}
         title={title}
         onLoad={handleLoad}
-        allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
+        allow="accelerometer; encrypted-media; picture-in-picture"
         allowFullScreen
         className={`${styles.iframe} ${!isLoading ? styles.iframeLoaded : ""}`}
       ></iframe>

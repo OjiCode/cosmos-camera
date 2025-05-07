@@ -14,7 +14,9 @@ const VideoPlayer = dynamic(
     })),
   {
     loading: () => (
-      <div className={styles.videoLoading}>Loading video player...</div>
+      <div className={styles.videoLoading} aria-live="polite">
+        Loading video player...
+      </div>
     ),
     ssr: true,
   }
@@ -37,7 +39,7 @@ export default async function ApodPage({
     return (
       <div className={styles.container}>
         <Link href="/gallery" className={styles.backLink}>
-          <ChevronLeftIcon className={styles.backIcon} />
+          <ChevronLeftIcon className={styles.backIcon} aria-hidden="true" />
           Back to Gallery
         </Link>
 
@@ -85,7 +87,7 @@ export default async function ApodPage({
   } catch (error) {
     console.error(`Failed to fetch APOD data for ${date}:`, error);
     return (
-      <div className={styles.errorContainer}>
+      <div role="alert" className={styles.errorContainer}>
         <h1 className={styles.errorTitle}>Error Fetching APOD Data</h1>
         <p>Could not load the Astronomy Picture of the Day for {date}.</p>
         <p>

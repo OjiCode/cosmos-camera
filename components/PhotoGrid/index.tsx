@@ -37,7 +37,11 @@ export const PhotoGrid = ({ initialInfiniteData }: PhotoGridProps) => {
 
   if (status === "pending") {
     return (
-      <div className={styles.gridContainer} aria-label="Loading images">
+      <div
+        className={styles.gridContainer}
+        aria-label="Loading images"
+        aria-live="polite"
+      >
         <div className={styles.grid}>
           {[...Array(DAYS_PER_PAGE)].map((_, index) => (
             <ShimmerCard key={`shimmer-${index}`} />
@@ -49,9 +53,9 @@ export const PhotoGrid = ({ initialInfiniteData }: PhotoGridProps) => {
 
   if (status === "error") {
     return (
-      <div className={styles.errorState}>
+      <div className={styles.errorState} aria-live="assertive">
         Error loading images: {error?.message}
-      </div> // TODO: Style this as well
+      </div>
     );
   }
 
@@ -59,7 +63,7 @@ export const PhotoGrid = ({ initialInfiniteData }: PhotoGridProps) => {
 
   return (
     <div className={styles.gridContainer}>
-      <div className={styles.grid}>
+      <div role="grid" className={styles.grid}>
         {data?.pages.map((page: ApodData[], pageIndex: number) =>
           [...page].reverse().map((apod: ApodData) => {
             const currentIndex = imageIndex++;
@@ -87,9 +91,10 @@ export const PhotoGrid = ({ initialInfiniteData }: PhotoGridProps) => {
       />
 
       {!hasNextPage && !isFetching && (
-        <div className={styles.endOfListState}>No more images to load.</div>
+        <div className={styles.endOfListState} aria-live="polite">
+          No more images to load.
+        </div>
       )}
-      {/* // TODO: Last  bit of styling... I'm tired boss */}
     </div>
   );
 };
