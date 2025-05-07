@@ -53,6 +53,7 @@ Future a11y tasks: add skip-to-content link, test with screen readers, ensure ca
 3. **Pre-Commit Hooks** - Utilize `husky` for pre-commit hooks to maintain high quality standard.
 4. **Monitoring** – Sentry for errors.
 5. **Feature flags & experimentation** – LaunchDarkly for feature flags.
+6. **Testing, Testing, Testing** - The timeline of the project demanded that I prioritize certain aspects over others. In production, I would have more thoroughly tested the application including adding integration and E2E tests.
 
 ### Nice-to-Have Future Features
 
